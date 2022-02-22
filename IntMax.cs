@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Finding_Max_Of_Generic_Topic
 {
-    internal class StringMax
+    internal class IntMax
     {
-        public string value1;
-        public string value2;
-        public string value3;
+        public int value1;
+        public int value2;
+        public int value3;
 
-        public StringMax(string value1, string value2, string value3)
+        public IntMax(int value1, int value2, int value3)
         {
             this.value1 = value1;
             this.value2 = value2;
