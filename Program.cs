@@ -5,17 +5,22 @@ namespace Finding_Max_Of_Generic_Topic
     {
         public static void Main()
         {
-            Console.WriteLine("Welcome to the generic problems");
-            IntMax<int> findMaxInt = new IntMax<int>(569, 478, 999);
-            Console.WriteLine(findMaxInt.maxLength(569, 478, 999));
-            IntMax<float> findMaxFloat = new IntMax<float>(9.5F, 5.6F, 4.7F);
-            Console.WriteLine(findMaxFloat.maxLength(9.5F, 5.6F, 4.7F));
-            IntMax<string> findMaxString = new IntMax<string>("Ganga", "Venky", "Siri");
-            Console.WriteLine(findMaxString.maxLength("Ganga", "Venky", "Siri"));
+            int[] arrayOfIntegers = { 4, 5, 6, 7, 8, 9 };
+            float[] arrayOfFloats = { 4.6F,7.8F,8.8F,9.5F };
+            string[] arrayOfStrings = { "g", "a", "n", };
 
+            //Creating object and calling with IntMax class
+            IntMax<int> maxInt = new IntMax<int>(arrayOfIntegers);
 
+            //printing max of int by calling the MaxMethod
+            Console.WriteLine(maxInt.MaxMethod());
 
-            
+            IntMax<float> maxFloat = new IntMax<float>(arrayOfFloats);
+            Console.WriteLine(maxFloat.MaxMethod());
+
+            IntMax<string> maxString = new IntMax<string>(arrayOfStrings);
+            Console.WriteLine(maxString.MaxMethod());
+   
         }
 
         

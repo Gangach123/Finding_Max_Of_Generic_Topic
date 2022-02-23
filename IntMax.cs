@@ -8,31 +8,26 @@ namespace Finding_Max_Of_Generic_Topic
 {
     public class IntMax<T>
     {
-        public T value1, value2, value3;
-       
-        
+        public T[] valueofArray;
 
-        public IntMax(T value1, T value2,T value3)
+        public IntMax(T[] valueofArray)
         {
-            this.value1 = value1;
-            this.value2 = value2;
-            this.value3 = value3;
+            this.valueofArray = valueofArray;
         }
-        public T maxLength<T>(T value1, T value2, T value3)
-
+        public T[] Sort(T[] valuesofArray)
         {
-            if (Comparer<T>.Default.Compare(value1, value2) > 0 && Comparer<T>.Default.Compare(value1, value3) > 0)
-            {
-                return value1;
-            }
-            else if (Comparer<T>.Default.Compare(value2, value1) > 0 && Comparer<T>.Default.Compare(value2, value3) > 0)
-            {
-                return value2;
-            }
-            else
-            {
-                return value3;
-            }
+            Array.Sort(valuesofArray);
+            return valuesofArray;
+        }
+        public T MaxOfArray(T[] valuesofArray)
+        {
+            var sorted_Values = Sort(valuesofArray);
+            return sorted_Values[^1];
+        }
+        public T MaxMethod()
+        {
+            var max = MaxOfArray(valueofArray);
+            return max;
         }
 
 
