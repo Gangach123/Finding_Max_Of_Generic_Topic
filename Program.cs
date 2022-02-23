@@ -1,35 +1,24 @@
 ﻿using System;
-namespace genericProblems
+namespace Finding_Max_Of_Generic_Topic
 {
     class Program
     {
         public static void Main()
         {
             Console.WriteLine("Welcome to the generic problems");
-            Program findMax = new Program();
-            Console.WriteLine($"Maximum number is {findMax.maxLength<int>(569, 478, 999)}");
-            Console.WriteLine($"Maximum float number is {findMax.maxLength<float>(9.9F, 5.6F, 4.7F)}");
-            Console.WriteLine($"Maximum string is {findMax.maxLength<string>("Ganga", "Venky", "Siri")}");
+            IntMax<int> findMaxInt = new IntMax<int>(569, 478, 999);
+            Console.WriteLine(findMaxInt.maxLength(569, 478, 999));
+            IntMax<float> findMaxFloat = new IntMax<float>(9.5F, 5.6F, 4.7F);
+            Console.WriteLine(findMaxFloat.maxLength(9.5F, 5.6F, 4.7F));
+            IntMax<string> findMaxString = new IntMax<string>("Ganga", "Venky", "Siri");
+            Console.WriteLine(findMaxString.maxLength("Ganga", "Venky", "Siri"));
 
 
+
+            
         }
 
-        private T maxLength<T>(T value1, T value2, T value3)
-
-        {
-            if (Comparer<T>.Default.Compare(value1, value2) > 0 && Comparer<T>.Default.Compare(value1, value3) > 0)
-            {
-                return value1;
-            }
-            else if (Comparer<T>.Default.Compare(value2, value1) > 0 && Comparer<T>.Default.Compare(value2, value3) > 0)
-            {
-                return value2;
-            }
-            else
-            {
-                return value3;
-            }
-        }
+        
     }
 
     

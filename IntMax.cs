@@ -6,19 +6,35 @@ using System.Threading.Tasks;
 
 namespace Finding_Max_Of_Generic_Topic
 {
-    internal class IntMax
+    public class IntMax<T>
     {
-        public int value1;
-        public int value2;
-        public int value3;
+        public T value1, value2, value3;
+       
+        
 
-        public IntMax(int value1, int value2, int value3)
+        public IntMax(T value1, T value2,T value3)
         {
             this.value1 = value1;
             this.value2 = value2;
             this.value3 = value3;
         }
-        
+        public T maxLength<T>(T value1, T value2, T value3)
+
+        {
+            if (Comparer<T>.Default.Compare(value1, value2) > 0 && Comparer<T>.Default.Compare(value1, value3) > 0)
+            {
+                return value1;
+            }
+            else if (Comparer<T>.Default.Compare(value2, value1) > 0 && Comparer<T>.Default.Compare(value2, value3) > 0)
+            {
+                return value2;
+            }
+            else
+            {
+                return value3;
+            }
+        }
+
 
 
     }
